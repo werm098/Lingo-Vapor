@@ -18,7 +18,7 @@ public struct LingoProvider {
         let directory = application.directory.workingDirectory
         let workDir = directory.hasSuffix("/") ? directory : directory + "/"
         let rootPath = workDir + (configuration?.localizationsDir ?? "")
-        return try Lingo(rootPath: rootPath, defaultLocale: (configuration?.defaultLocale ?? ""))
+        return try Lingo(rootPath: rootPath, defaultLocale: (configuration?.defaultLocale ?? ""), logger: application.logger)
     }
 }
 
